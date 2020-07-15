@@ -7,8 +7,7 @@ else cast (cast((Growth * 8 )/1024 as numeric(15,2)) as varchar) + ' MB'end Grow
 from master..sysaltfiles with(nolock)
 order by Nome
 
---268435456
---2097152
+
 
 
 --(cast((MaxSize * 8 )/1024 as numeric(15,2)) as varchar) + ' MB'

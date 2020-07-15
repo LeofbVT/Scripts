@@ -24,6 +24,6 @@ AND dm_ius.database_id = DB_ID()
 AND i.type_desc = 'nonclustered'
 AND i.is_primary_key = 0
 AND i.is_unique_constraint = 0
-AND o.name = 'ce_Trafego' --Nome da tabela. Linha pode ser comentada para pegar a utilização da base e não de tabela específica.
+AND o.name = 'tablename' --Nome da tabela. Linha pode ser comentada para pegar a utilização da base e não de tabela específica.
 ORDER BY (dm_ius.user_seeks + dm_ius.user_scans + dm_ius.user_lookups) ASC
 GO

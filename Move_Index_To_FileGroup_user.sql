@@ -10,7 +10,7 @@ ON i.data_space_id = f.data_space_id
 INNER JOIN sys.all_objects o
 ON i.[object_id] = o.[object_id] WHERE i.data_space_id = f.data_space_id
 AND o.type = 'U' -- User Created Tables
---AND o.[name] = 'TM_APPLICATION'
+--AND o.[name] = 'APPLICATION'
 AND f.[name] = 'PRIMARY'
 AND i.[name] IS NOT NULL
 GO
@@ -30,7 +30,7 @@ WHERE s.index_id = 0
 SELECT 'EXEC MoveIndexToFileGroup '''
     +TABLE_CATALOG+''','''
     +TABLE_SCHEMA+''','''
-    +TABLE_NAME+''',NULL,''TM_FG1'';'
+    +TABLE_NAME+''',NULL,''FG1'';'
     +char(13)+char(10)
     +'GO'+char(13)+char(10)
 SELECT TOP 1 *
@@ -43,7 +43,7 @@ ORDER BY TABLE_SCHEMA, TABLE_NAME;
 SELECT 'EXEC MoveIndexToFileGroup '''
     +TABLE_CATALOG+''','''
     +TABLE_SCHEMA+''','''
-    +TABLE_NAME+''',NULL,''TM_FG1'';'
+    +TABLE_NAME+''',NULL,''FG1'';'
     +char(13)+char(10)
     +'GO'+char(13)+char(10)
 FROM sys.indexes i
@@ -52,7 +52,7 @@ ON i.data_space_id = f.data_space_id
 INNER JOIN sys.all_objects o
 ON i.[object_id] = o.[object_id] WHERE i.data_space_id = f.data_space_id
 AND o.type = 'U' -- User Created Tables
---AND o.[name] = 'TM_APPLICATION'
+--AND o.[name] = 'APPLICATION'
 AND f.[name] = 'PRIMARY'
 AND i.[name] IS NOT NULL
 GO
