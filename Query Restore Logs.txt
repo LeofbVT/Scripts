@@ -1,0 +1,8 @@
+select 'RESTORE LOG [' + database_name + '] FROM DISK = N''' + physical_device_name + ''' WITH FILE = 1, NORECOVERY, NOUNLOAD, STATS = 10', backup_start_date, backup_finish_date
+FROM msdb..backupset, msdb..backupmediafamily
+where msdb..backupmediafamily.media_set_id = msdb..backupset.media_set_id and
+type = 'L' and
+--database_name in ('databasename') and
+backup_start_date >= '08/31/2020 15:00'
+--and backup_start_date < '08/31/2019 22:50'
+order by backup_start_date
